@@ -1,0 +1,74 @@
+{
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "tell_art_and_artist": {
+    "precision": 0.9928571428571429,
+    "recall": 0.9858156028368794,
+    "f1-score": 0.9893238434163701,
+    "support": 141
+  },
+  "affirm": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1
+  },
+  "condition": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "want_art": {
+    "precision": 0.9523809523809523,
+    "recall": 1.0,
+    "f1-score": 0.975609756097561,
+    "support": 20
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "tellcondition": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "micro avg": {
+    "precision": 0.9836956521739131,
+    "recall": 0.9836956521739131,
+    "f1-score": 0.9836956521739131,
+    "support": 184
+  },
+  "macro avg": {
+    "precision": 0.8828042328042328,
+    "recall": 0.8873128447596533,
+    "f1-score": 0.8849926221682146,
+    "support": 184
+  },
+  "weighted avg": {
+    "precision": 0.9839156314699792,
+    "recall": 0.9836956521739131,
+    "f1-score": 0.9837329187155402,
+    "support": 184
+  }
+}

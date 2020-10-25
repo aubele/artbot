@@ -1,0 +1,51 @@
+import ./art.chatito
+import ./artist.chatito
+# NOTE: 60% of the examples should come from the first sentence, and 40% from the second
+
+%[tell_art_and_artist]('training': '100', 'testing': '100', 'distribution': 'regular')
+    ~[ich?] ~[help?] ~[img?] ~[call?] @[art] ~[von] @[artist] ~[look?]
+    ~[show] ~[mir?] ~[img?] ~[call?] @[art] ~[von] @[artist]
+
+
+~[show]
+    zeige
+    präsentiere
+    demonstriere
+
+~[img]
+    bilder
+    kunstwerke
+    bild
+    ein bild
+    werke
+    ein kunstwerk
+
+~[look]
+    sehen
+    anschauen
+    zeigen
+    betrachten
+    ansehen
+
+~[von]
+    von
+
+~[mir]
+    mir
+
+~[ich]
+    ich
+
+~[das]
+    das
+
+~[call]
+    namens
+    heißt
+
+~[help]
+    würde
+    würde gerne
+    habe interesse
+    habe bock
+    hätte gerne

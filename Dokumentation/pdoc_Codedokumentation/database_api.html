@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.4" />
+<title>database_api API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>database_api</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import sqlite3
+from sqlite3 import Error
+
+
+def open_db(db_file=&#34;./art.db&#34;):
+    &#34;&#34;&#34;
+    Open, or create the database if it is not exsisting and returns the connection.
+
+    Parameters:
+    db_file(String): Path to the database file
+
+    Returns:
+    connection(sqlite3.Connection): The connection to the database
+    &#34;&#34;&#34;
+    connnection = None
+    try:
+        connection = sqlite3.connect(db_file)
+        connection.execute(&#34;PRAGMA foreign_keys = 1&#34;)
+        return connection
+    except Error as e:
+        print(e)
+    return connection
+
+
+def close_db(connection):
+    &#34;&#34;&#34;
+    Closes the connection to the database.
+
+    Parameters:
+    connection(sqlite3.Connection): The connection to the database, that should get closed
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    try:
+        connection.close()
+    except Error as e:
+        print(e)
+
+
+def set_up_db():
+    &#34;&#34;&#34;
+    Initialize the database with the two tables pictures and artists and their values.
+
+    Parameters:
+    None
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+
+    connection = open_db()
+    cursor = connection.cursor()
+
+    cursor.execute(&#34;DROP TABLE IF EXISTS pictures;&#34;)
+    cursor.execute(&#34;DROP TABLE IF EXISTS artists;&#34;)
+
+    setup_artists = &#34;&#34;&#34;
+        CREATE TABLE artists(
+        name VARCHAR(50) NOT NULL PRIMARY KEY,
+        birth DATE NOT NULL);
+    &#34;&#34;&#34;
+    cursor.execute(setup_artists)
+
+    setup_pictures = &#34;&#34;&#34;
+        CREATE TABLE pictures(
+        filename VARCHAR(50) PRIMARY KEY,
+        title VARCHAR(100),
+        epoch VARCHAR(50),
+        genre VARCHAR(50),
+        artist VARCHAR(50),
+        FOREIGN KEY (artist) REFERENCES artists(name));
+    &#34;&#34;&#34;
+    cursor.execute(setup_pictures)
+
+    connection.commit()
+    close_db(connection)
+
+
+def insert_artist(artist, birth):
+    &#34;&#34;&#34;
+    Inserts an artist into the artist table.
+
+    Parameters:
+    artist(string): the name of the artist
+    birth(string): the birth of the artist
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    insert_artist = &#34;INSERT INTO artists (name, birth) VALUES (?,?)&#34;
+    data_tuple = (artist, birth)
+    cursor.execute(insert_artist, data_tuple)
+    connection.commit()
+    close_db(connection)
+
+
+def insert_picture(filename, title, artist, epoch, genre):
+    &#34;&#34;&#34;
+    Inserts a picture into the picture table in the database.
+
+    Parameters:
+    filename(string): the filename of the picture
+    title(string): the title of the picture
+    artist(string): the name of the artist
+    epoch(string): the epoch of the picture
+    genre(string): the genre of the picture
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    insert_picture = &#34;INSERT INTO pictures (filename, title, epoch, genre, artist) VALUES (?,?,?,?,?)&#34;
+    data_tuple = (filename, title, epoch, genre, artist)
+    cursor.execute(insert_picture, data_tuple)
+    connection.commit()
+    close_db(connection)
+
+
+def delete_artist(artist):
+    &#34;&#34;&#34;
+    Deletes the artist with the given name.
+
+    Parameters:
+    artist(string): the name of the artist
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    delete_command = &#34;DELETE FROM artists WHERE name= ?;&#34;
+    cursor.execute(delete_command, artist)
+    connection.commit()
+    close_db(connection)
+
+
+def delete_picture(filename):
+    &#34;&#34;&#34;
+    Deletes the picture with the given filename in the picture table.
+
+    Parameters:
+    filename(string): the name of the file of the picture
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    delete_command = &#34;DELETE FROM pictures WHERE filename= ?;&#34;
+    cursor.execute(delete_command, filename)
+    connection.commit()
+    close_db(connection)
+
+
+def get_artist(name):
+    &#34;&#34;&#34;
+    Returns the artists with the given name.
+
+    Parameters:
+    name(string): a partstring or a full name of an artist
+
+    Returns:
+    artists(list): a list of all artists with the given string in their name
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM artists WHERE instr(LOWER(name), ?) &gt;= 1;&#34;
+    cursor.execute(get_command, (name.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    artists = []
+    for row in record:
+        artists.append(row[0])
+    return artists
+
+
+def get_artists_birth(name):
+    &#34;&#34;&#34;
+    Returns the birth of an artist, whose name is given. It must be the exact name.
+
+    Parameters:
+    name(string): the name of the artist
+
+    Returns:
+    birth(string): the birthday of the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM artists WHERE name = ?;&#34;
+    cursor.execute(get_command, (name,))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record[0][1]
+
+
+def get_pictures_by_title(title):
+    &#34;&#34;&#34;
+    Returns the pictures with the given title.
+
+    Parameters:
+    title(string): the title of the picture
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title, containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE instr(LOWER(title), ?) &gt;= 1;&#34;
+    cursor.execute(get_command, (title.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+
+def get_pictures_by_artist(artist):
+    &#34;&#34;&#34;
+    Returns the pictures of a given artist
+
+    Parameters:
+    artist(string): the name of the artist
+
+    Returns:
+    pictures(list): a list of tuples of all pictures from the given artist, containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE instr(LOWER(artist), ?) &gt;= 1;&#34;
+    cursor.execute(get_command, (artist.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_picture_by_title_and_artist(title, artist):
+    &#34;&#34;&#34;
+    Returns the picture with the given title and artist, checks for containing strings.
+
+    Parameters:
+    title(string): the title of the picture
+    artist(string): the name of the artist
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title and artist, containing the filename,
+    the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE (instr(LOWER(artist), ?) &gt;= 1) AND (instr(LOWER(title), ?) &gt;= 1);&#34;
+    data_tuple = (artist.lower(), title.lower())
+    cursor.execute(get_command, data_tuple)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_picture_by_exact_title_and_artist(title, artist):
+    &#34;&#34;&#34;
+    Returns the picture with the given title and artist. The given strings must be the exact title and artistname.
+
+    Parameters:
+    title(string): the exact title of the picture
+    artist(string): the exact name of the artist
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title and artist, containing the filename,
+    the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE (instr(LOWER(artist), ?) &gt;= 1)  AND (LOWER(title) =  ?);&#34;
+    data_tuple = (artist.lower(), title.lower())
+    cursor.execute(get_command, data_tuple)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_picture_by_exact_title(title):
+    &#34;&#34;&#34;
+    Returns the picture with the given title. The given string must be the exact title.
+
+    Parameters:
+    title(string): The exact title of the picture
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title, containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE (LOWER(title) = ?);&#34;
+    cursor.execute(get_command, (title.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_random_picture():
+    &#34;&#34;&#34;
+    Returns a random picture.
+
+    Parameters:
+    None
+
+    Returns:
+    picture(tuple): a tuple containing the filename, the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures ORDER BY RANDOM() LIMIT 1;&#34;
+    cursor.execute(get_command)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_random_picture_by_artist(artist):
+    &#34;&#34;&#34;
+    Returns a random picture from the given artist.
+
+    Parameters:
+    artist(string): the name of the artist
+
+    Returns:
+    picture(tuple): a tuple containing the filename, the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE instr(LOWER(artist), ?) &gt;= 1 ORDER BY RANDOM() LIMIT 1;&#34;
+    cursor.execute(get_command, (artist.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_all_pictures():
+    &#34;&#34;&#34;
+    Returns all pictures in the database.
+
+    Parameters:
+    None
+    Returns:
+    pictures(list): a list of tuples of all pictures containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures&#34;
+    cursor.execute(get_command)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record
+
+
+def get_all_artists_with_births():
+    &#34;&#34;&#34;
+    Returns all artists with their births.
+
+    Parameters:
+    None
+
+    Returns:
+    artists(dictionary): a dictionary with the artists as keys and the birth as value.
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM artists&#34;
+    cursor.execute(get_command)
+    record = cursor.fetchall()
+    close_db(connection)
+    artists = {}
+    for row in record:
+        artist = {row[0]: row[1]}
+        artists.update(artist)
+    return artists
+
+
+def get_all_artists():
+    &#34;&#34;&#34;
+    Returns all artists in the database.
+
+    Parameters:
+    None
+    Returns:
+    artists(list): a list with all artists
+    &#34;&#34;&#34;
+    record = get_all_artists_with_births()
+    artists = record.keys()
+    return artists
+
+if __name__ == &#39;__main__&#39;:
+    #open_db()
+    re = get_all_artists()
+    print(type(re))
+    print(re)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="database_api.close_db"><code class="name flex">
+<span>def <span class="ident">close_db</span></span>(<span>connection)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Closes the connection to the database.</p>
+<p>Parameters:
+connection(sqlite3.Connection): The connection to the database, that should get closed</p>
+<p>Returns:
+None</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close_db(connection):
+    &#34;&#34;&#34;
+    Closes the connection to the database.
+
+    Parameters:
+    connection(sqlite3.Connection): The connection to the database, that should get closed
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    try:
+        connection.close()
+    except Error as e:
+        print(e)</code></pre>
+</details>
+</dd>
+<dt id="database_api.delete_artist"><code class="name flex">
+<span>def <span class="ident">delete_artist</span></span>(<span>artist)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Deletes the artist with the given name.</p>
+<p>Parameters:
+artist(string): the name of the artist</p>
+<p>Returns:
+None</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_artist(artist):
+    &#34;&#34;&#34;
+    Deletes the artist with the given name.
+
+    Parameters:
+    artist(string): the name of the artist
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    delete_command = &#34;DELETE FROM artists WHERE name= ?;&#34;
+    cursor.execute(delete_command, artist)
+    connection.commit()
+    close_db(connection)</code></pre>
+</details>
+</dd>
+<dt id="database_api.delete_picture"><code class="name flex">
+<span>def <span class="ident">delete_picture</span></span>(<span>filename)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Deletes the picture with the given filename in the picture table.</p>
+<p>Parameters:
+filename(string): the name of the file of the picture</p>
+<p>Returns:
+None</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_picture(filename):
+    &#34;&#34;&#34;
+    Deletes the picture with the given filename in the picture table.
+
+    Parameters:
+    filename(string): the name of the file of the picture
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    delete_command = &#34;DELETE FROM pictures WHERE filename= ?;&#34;
+    cursor.execute(delete_command, filename)
+    connection.commit()
+    close_db(connection)</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_all_artists"><code class="name flex">
+<span>def <span class="ident">get_all_artists</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns all artists in the database.</p>
+<p>Parameters:
+None
+Returns:
+artists(list): a list with all artists</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_all_artists():
+    &#34;&#34;&#34;
+    Returns all artists in the database.
+
+    Parameters:
+    None
+    Returns:
+    artists(list): a list with all artists
+    &#34;&#34;&#34;
+    record = get_all_artists_with_births()
+    artists = record.keys()
+    return artists</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_all_artists_with_births"><code class="name flex">
+<span>def <span class="ident">get_all_artists_with_births</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns all artists with their births.</p>
+<p>Parameters:
+None</p>
+<p>Returns:
+artists(dictionary): a dictionary with the artists as keys and the birth as value.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_all_artists_with_births():
+    &#34;&#34;&#34;
+    Returns all artists with their births.
+
+    Parameters:
+    None
+
+    Returns:
+    artists(dictionary): a dictionary with the artists as keys and the birth as value.
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM artists&#34;
+    cursor.execute(get_command)
+    record = cursor.fetchall()
+    close_db(connection)
+    artists = {}
+    for row in record:
+        artist = {row[0]: row[1]}
+        artists.update(artist)
+    return artists</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_all_pictures"><code class="name flex">
+<span>def <span class="ident">get_all_pictures</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns all pictures in the database.</p>
+<p>Parameters:
+None
+Returns:
+pictures(list): a list of tuples of all pictures containing the filename, the title, the epoch,
+the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_all_pictures():
+    &#34;&#34;&#34;
+    Returns all pictures in the database.
+
+    Parameters:
+    None
+    Returns:
+    pictures(list): a list of tuples of all pictures containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures&#34;
+    cursor.execute(get_command)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_artist"><code class="name flex">
+<span>def <span class="ident">get_artist</span></span>(<span>name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the artists with the given name.</p>
+<p>Parameters:
+name(string): a partstring or a full name of an artist</p>
+<p>Returns:
+artists(list): a list of all artists with the given string in their name</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_artist(name):
+    &#34;&#34;&#34;
+    Returns the artists with the given name.
+
+    Parameters:
+    name(string): a partstring or a full name of an artist
+
+    Returns:
+    artists(list): a list of all artists with the given string in their name
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM artists WHERE instr(LOWER(name), ?) &gt;= 1;&#34;
+    cursor.execute(get_command, (name.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    artists = []
+    for row in record:
+        artists.append(row[0])
+    return artists</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_artists_birth"><code class="name flex">
+<span>def <span class="ident">get_artists_birth</span></span>(<span>name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the birth of an artist, whose name is given. It must be the exact name.</p>
+<p>Parameters:
+name(string): the name of the artist</p>
+<p>Returns:
+birth(string): the birthday of the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_artists_birth(name):
+    &#34;&#34;&#34;
+    Returns the birth of an artist, whose name is given. It must be the exact name.
+
+    Parameters:
+    name(string): the name of the artist
+
+    Returns:
+    birth(string): the birthday of the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM artists WHERE name = ?;&#34;
+    cursor.execute(get_command, (name,))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record[0][1]</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_picture_by_exact_title"><code class="name flex">
+<span>def <span class="ident">get_picture_by_exact_title</span></span>(<span>title)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the picture with the given title. The given string must be the exact title.</p>
+<p>Parameters:
+title(string): The exact title of the picture</p>
+<p>Returns:
+pictures(list): a list of tuples of all pictures with the given title, containing the filename, the title, the epoch,
+the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_picture_by_exact_title(title):
+    &#34;&#34;&#34;
+    Returns the picture with the given title. The given string must be the exact title.
+
+    Parameters:
+    title(string): The exact title of the picture
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title, containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE (LOWER(title) = ?);&#34;
+    cursor.execute(get_command, (title.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_picture_by_exact_title_and_artist"><code class="name flex">
+<span>def <span class="ident">get_picture_by_exact_title_and_artist</span></span>(<span>title, artist)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the picture with the given title and artist. The given strings must be the exact title and artistname.</p>
+<p>Parameters:
+title(string): the exact title of the picture
+artist(string): the exact name of the artist</p>
+<p>Returns:
+pictures(list): a list of tuples of all pictures with the given title and artist, containing the filename,
+the title, the epoch, the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_picture_by_exact_title_and_artist(title, artist):
+    &#34;&#34;&#34;
+    Returns the picture with the given title and artist. The given strings must be the exact title and artistname.
+
+    Parameters:
+    title(string): the exact title of the picture
+    artist(string): the exact name of the artist
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title and artist, containing the filename,
+    the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE (instr(LOWER(artist), ?) &gt;= 1)  AND (LOWER(title) =  ?);&#34;
+    data_tuple = (artist.lower(), title.lower())
+    cursor.execute(get_command, data_tuple)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_picture_by_title_and_artist"><code class="name flex">
+<span>def <span class="ident">get_picture_by_title_and_artist</span></span>(<span>title, artist)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the picture with the given title and artist, checks for containing strings.</p>
+<p>Parameters:
+title(string): the title of the picture
+artist(string): the name of the artist</p>
+<p>Returns:
+pictures(list): a list of tuples of all pictures with the given title and artist, containing the filename,
+the title, the epoch, the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_picture_by_title_and_artist(title, artist):
+    &#34;&#34;&#34;
+    Returns the picture with the given title and artist, checks for containing strings.
+
+    Parameters:
+    title(string): the title of the picture
+    artist(string): the name of the artist
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title and artist, containing the filename,
+    the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE (instr(LOWER(artist), ?) &gt;= 1) AND (instr(LOWER(title), ?) &gt;= 1);&#34;
+    data_tuple = (artist.lower(), title.lower())
+    cursor.execute(get_command, data_tuple)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_pictures_by_artist"><code class="name flex">
+<span>def <span class="ident">get_pictures_by_artist</span></span>(<span>artist)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the pictures of a given artist</p>
+<p>Parameters:
+artist(string): the name of the artist</p>
+<p>Returns:
+pictures(list): a list of tuples of all pictures from the given artist, containing the filename, the title, the epoch,
+the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pictures_by_artist(artist):
+    &#34;&#34;&#34;
+    Returns the pictures of a given artist
+
+    Parameters:
+    artist(string): the name of the artist
+
+    Returns:
+    pictures(list): a list of tuples of all pictures from the given artist, containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE instr(LOWER(artist), ?) &gt;= 1;&#34;
+    cursor.execute(get_command, (artist.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_pictures_by_title"><code class="name flex">
+<span>def <span class="ident">get_pictures_by_title</span></span>(<span>title)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the pictures with the given title.</p>
+<p>Parameters:
+title(string): the title of the picture</p>
+<p>Returns:
+pictures(list): a list of tuples of all pictures with the given title, containing the filename, the title, the epoch,
+the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pictures_by_title(title):
+    &#34;&#34;&#34;
+    Returns the pictures with the given title.
+
+    Parameters:
+    title(string): the title of the picture
+
+    Returns:
+    pictures(list): a list of tuples of all pictures with the given title, containing the filename, the title, the epoch,
+    the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE instr(LOWER(title), ?) &gt;= 1;&#34;
+    cursor.execute(get_command, (title.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_random_picture"><code class="name flex">
+<span>def <span class="ident">get_random_picture</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns a random picture.</p>
+<p>Parameters:
+None</p>
+<p>Returns:
+picture(tuple): a tuple containing the filename, the title, the epoch, the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_random_picture():
+    &#34;&#34;&#34;
+    Returns a random picture.
+
+    Parameters:
+    None
+
+    Returns:
+    picture(tuple): a tuple containing the filename, the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures ORDER BY RANDOM() LIMIT 1;&#34;
+    cursor.execute(get_command)
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.get_random_picture_by_artist"><code class="name flex">
+<span>def <span class="ident">get_random_picture_by_artist</span></span>(<span>artist)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns a random picture from the given artist.</p>
+<p>Parameters:
+artist(string): the name of the artist</p>
+<p>Returns:
+picture(tuple): a tuple containing the filename, the title, the epoch, the genre and the artist</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_random_picture_by_artist(artist):
+    &#34;&#34;&#34;
+    Returns a random picture from the given artist.
+
+    Parameters:
+    artist(string): the name of the artist
+
+    Returns:
+    picture(tuple): a tuple containing the filename, the title, the epoch, the genre and the artist
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    get_command = &#34;SELECT * FROM pictures WHERE instr(LOWER(artist), ?) &gt;= 1 ORDER BY RANDOM() LIMIT 1;&#34;
+    cursor.execute(get_command, (artist.lower(),))
+    record = cursor.fetchall()
+    close_db(connection)
+    return record</code></pre>
+</details>
+</dd>
+<dt id="database_api.insert_artist"><code class="name flex">
+<span>def <span class="ident">insert_artist</span></span>(<span>artist, birth)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Inserts an artist into the artist table.</p>
+<p>Parameters:
+artist(string): the name of the artist
+birth(string): the birth of the artist</p>
+<p>Returns:
+None</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_artist(artist, birth):
+    &#34;&#34;&#34;
+    Inserts an artist into the artist table.
+
+    Parameters:
+    artist(string): the name of the artist
+    birth(string): the birth of the artist
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    insert_artist = &#34;INSERT INTO artists (name, birth) VALUES (?,?)&#34;
+    data_tuple = (artist, birth)
+    cursor.execute(insert_artist, data_tuple)
+    connection.commit()
+    close_db(connection)</code></pre>
+</details>
+</dd>
+<dt id="database_api.insert_picture"><code class="name flex">
+<span>def <span class="ident">insert_picture</span></span>(<span>filename, title, artist, epoch, genre)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Inserts a picture into the picture table in the database.</p>
+<p>Parameters:
+filename(string): the filename of the picture
+title(string): the title of the picture
+artist(string): the name of the artist
+epoch(string): the epoch of the picture
+genre(string): the genre of the picture</p>
+<p>Returns:
+None</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_picture(filename, title, artist, epoch, genre):
+    &#34;&#34;&#34;
+    Inserts a picture into the picture table in the database.
+
+    Parameters:
+    filename(string): the filename of the picture
+    title(string): the title of the picture
+    artist(string): the name of the artist
+    epoch(string): the epoch of the picture
+    genre(string): the genre of the picture
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+    connection = open_db()
+    cursor = connection.cursor()
+    insert_picture = &#34;INSERT INTO pictures (filename, title, epoch, genre, artist) VALUES (?,?,?,?,?)&#34;
+    data_tuple = (filename, title, epoch, genre, artist)
+    cursor.execute(insert_picture, data_tuple)
+    connection.commit()
+    close_db(connection)</code></pre>
+</details>
+</dd>
+<dt id="database_api.open_db"><code class="name flex">
+<span>def <span class="ident">open_db</span></span>(<span>db_file='./art.db')</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Open, or create the database if it is not exsisting and returns the connection.</p>
+<p>Parameters:
+db_file(String): Path to the database file</p>
+<p>Returns:
+connection(sqlite3.Connection): The connection to the database</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def open_db(db_file=&#34;./art.db&#34;):
+    &#34;&#34;&#34;
+    Open, or create the database if it is not exsisting and returns the connection.
+
+    Parameters:
+    db_file(String): Path to the database file
+
+    Returns:
+    connection(sqlite3.Connection): The connection to the database
+    &#34;&#34;&#34;
+    connnection = None
+    try:
+        connection = sqlite3.connect(db_file)
+        connection.execute(&#34;PRAGMA foreign_keys = 1&#34;)
+        return connection
+    except Error as e:
+        print(e)
+    return connection</code></pre>
+</details>
+</dd>
+<dt id="database_api.set_up_db"><code class="name flex">
+<span>def <span class="ident">set_up_db</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Initialize the database with the two tables pictures and artists and their values.</p>
+<p>Parameters:
+None</p>
+<p>Returns:
+None</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_up_db():
+    &#34;&#34;&#34;
+    Initialize the database with the two tables pictures and artists and their values.
+
+    Parameters:
+    None
+
+    Returns:
+    None
+    &#34;&#34;&#34;
+
+    connection = open_db()
+    cursor = connection.cursor()
+
+    cursor.execute(&#34;DROP TABLE IF EXISTS pictures;&#34;)
+    cursor.execute(&#34;DROP TABLE IF EXISTS artists;&#34;)
+
+    setup_artists = &#34;&#34;&#34;
+        CREATE TABLE artists(
+        name VARCHAR(50) NOT NULL PRIMARY KEY,
+        birth DATE NOT NULL);
+    &#34;&#34;&#34;
+    cursor.execute(setup_artists)
+
+    setup_pictures = &#34;&#34;&#34;
+        CREATE TABLE pictures(
+        filename VARCHAR(50) PRIMARY KEY,
+        title VARCHAR(100),
+        epoch VARCHAR(50),
+        genre VARCHAR(50),
+        artist VARCHAR(50),
+        FOREIGN KEY (artist) REFERENCES artists(name));
+    &#34;&#34;&#34;
+    cursor.execute(setup_pictures)
+
+    connection.commit()
+    close_db(connection)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="database_api.close_db" href="#database_api.close_db">close_db</a></code></li>
+<li><code><a title="database_api.delete_artist" href="#database_api.delete_artist">delete_artist</a></code></li>
+<li><code><a title="database_api.delete_picture" href="#database_api.delete_picture">delete_picture</a></code></li>
+<li><code><a title="database_api.get_all_artists" href="#database_api.get_all_artists">get_all_artists</a></code></li>
+<li><code><a title="database_api.get_all_artists_with_births" href="#database_api.get_all_artists_with_births">get_all_artists_with_births</a></code></li>
+<li><code><a title="database_api.get_all_pictures" href="#database_api.get_all_pictures">get_all_pictures</a></code></li>
+<li><code><a title="database_api.get_artist" href="#database_api.get_artist">get_artist</a></code></li>
+<li><code><a title="database_api.get_artists_birth" href="#database_api.get_artists_birth">get_artists_birth</a></code></li>
+<li><code><a title="database_api.get_picture_by_exact_title" href="#database_api.get_picture_by_exact_title">get_picture_by_exact_title</a></code></li>
+<li><code><a title="database_api.get_picture_by_exact_title_and_artist" href="#database_api.get_picture_by_exact_title_and_artist">get_picture_by_exact_title_and_artist</a></code></li>
+<li><code><a title="database_api.get_picture_by_title_and_artist" href="#database_api.get_picture_by_title_and_artist">get_picture_by_title_and_artist</a></code></li>
+<li><code><a title="database_api.get_pictures_by_artist" href="#database_api.get_pictures_by_artist">get_pictures_by_artist</a></code></li>
+<li><code><a title="database_api.get_pictures_by_title" href="#database_api.get_pictures_by_title">get_pictures_by_title</a></code></li>
+<li><code><a title="database_api.get_random_picture" href="#database_api.get_random_picture">get_random_picture</a></code></li>
+<li><code><a title="database_api.get_random_picture_by_artist" href="#database_api.get_random_picture_by_artist">get_random_picture_by_artist</a></code></li>
+<li><code><a title="database_api.insert_artist" href="#database_api.insert_artist">insert_artist</a></code></li>
+<li><code><a title="database_api.insert_picture" href="#database_api.insert_picture">insert_picture</a></code></li>
+<li><code><a title="database_api.open_db" href="#database_api.open_db">open_db</a></code></li>
+<li><code><a title="database_api.set_up_db" href="#database_api.set_up_db">set_up_db</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.4</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

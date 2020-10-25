@@ -1,0 +1,90 @@
+actions:
+  - utter_more_artists
+
+  - utter_ask_art
+  - utter_ask_art_and_artist
+  - utter_ask_more_art
+
+  - utter_wrong_artist
+  - utter_wrong_art
+  - utter_wrong_art_from_artist
+
+  - utter_unknown
+
+  - utter_vague
+
+  - utter_goodbye
+  - utter_greet
+  - utter_iamabot
+
+  - action_fetch_artist
+  - action_fetch_art
+  - action_fetch_art_with_artist
+  - action_greet
+
+entities:
+- artist
+- art
+
+intents:
+- greet:
+    triggers: action_greet
+- goodbye:
+    triggers: utter_goodbye
+- condition
+- tellcondition
+- affirm
+- deny
+- bot_challenge
+- chitchatrasa
+
+- want_art:
+    triggers: utter_ask_art_and_artist
+- tell_art_and_artist
+
+slots:
+  artist:
+    type: text
+  art:
+    type: text
+
+templates:
+  utter_more_artists:
+    - text: "Ich kenne mehrere Künstler mit dem Namen {artist}, nenne bitte einen davon:"
+    - text: "Es gibt mehrere Künstler mit dem Namen {artist}, diese kenne ich:"
+
+  utter_ask_art:
+    - text: Wie ist denn der Name deines Wunsch-Bildes?
+    - text: Wie lautet der Titel des Bildes?
+  utter_ask_art_and_artist:
+    - text: Sag mir bitte den Namen des Künstlers und den Titel des Bildes, welches du sehen willst.
+    - text: Welches Bild von welchem Künstler möchtest du gerne sehen?
+  utter_ask_more_art:
+    - text: Wenn du noch ein Bild sehen willst, sag es mir einfach.
+
+  utter_wrong_artist:
+    - text: "Ich kenne den angegebenen Künstler {artist} leider nicht. Versuch doch einen anderen.\nVon folgenden \
+            Künstlern haben wir Bilder:"
+    - text: "Leider haben wir keine Bilder von dem angegebenen Künstler {artist}, versuche es doch mit einem anderen. \
+            \nVon folgenden Künstlern haben wir Bilder:"
+  utter_wrong_art:
+    - text: Das gegebene Bild sagt mir leider nichts. Versuch es doch mit einem anderen.
+    - text: Das angefragte Bild kenn ich leider nicht. Versuch doch ein anderes Bild.
+  utter_wrong_art_from_artist:
+    - text: Leider haben wir von dem Künstler {artist} kein Bild namens {art} versuch es doch mit einem anderen.
+
+  utter_unknown:
+    - text: Das sagt mir leider gar nichts. Versuch es doch mal mit einer anderen Eingabe.
+
+  utter_vague:
+    - text: "Leider gibt es mehrere Bilder mit dem Namen {art}.\nFolgende Bilder stehen zur Auswahl:"
+
+  utter_goodbye:
+    - text: Auf Wiedersehen!
+    - text: Machs gut!
+    - text: Bis bald!
+  utter_greet:
+    - text: "Hallo! Frag mich doch mal nach einem Bild.\nVon folgenden Künstlern haben wir Bilder:"
+    - text: "Hi, ich kann dir Bilder von Künstler zeigen, wenn du fragst.\nFür diese Künstler haben wir Bilder:"
+  utter_iamabot:
+    - text: Ich bin ein Bot.

@@ -1,0 +1,76 @@
+## intent:greet
+- hey
+- hey hey
+- hallo
+- hallo hallo 
+- hallo hier
+- hallo an alle
+- hallo in die runde
+- hi
+- hi hi
+- hi hier
+- hi an alle
+- hi in die runde
+- guten morgen
+- guten abend
+- servus
+- grüß dich
+- grüß gott
+- grüße
+- jo
+- hallo bot
+- hi bot
+- hallo chatbot
+- hi chatbot
+- hallo artbot
+- hi artbot
+- servus bot
+- hey bot
+- grüß dich bot
+- guten morgen bot
+- guten abend bot
+- jo bot
+
+## intent:goodbye
+- tschüss
+- auf wiedersehen
+- bis später
+- tschau
+- tschau tschau
+- ciao
+- ciao ciao
+- bis dann
+- bye
+- bye bye
+- tschüss bot
+- auf wiedersehen bot
+- bis später bot
+- tschau bot
+- ciao bot
+- bis dann bot
+- bye bot
+- tschüss chatbot
+- auf wiedersehen chatbot
+- bis später chatbot
+- tschau chatbot
+- ciao chatbot
+- bis dann chatbot
+- bye chatbot
+- tschüss artbot
+- tschüss artbot
+- auf wiedersehen artbot
+- bis später artbot
+- tschau artbot
+- ciao artbot
+- bis dann artbot
+- bye artbot
+
+## intent:bot_challenge
+- bist du ein bot?
+- bist du ein mensch?
+- bist du eine maschine?
+- bist du ein computer?
+- spreche ich mit einem bot?
+- spreche ich mit einem menschen?
+- spreche ich mit einer maschine?
+- spreche ich mit einem computer?

@@ -1,0 +1,29 @@
+<aiml encoding="UTF-8" version="1.0.1">
+  <category>
+    <pattern>XCHECKART VAN GOGH</pattern>
+    <template>
+      <think>
+        <set name="bild">Sternennacht</set>
+        <set name="epoche">Impressionismus</set>
+      </think>
+    </template>
+  </category>
+  <category>
+    <pattern>XCHECKART PICASSO</pattern>
+    <template>
+      <think>
+        <set name="bild">Dora Maar</set>
+        <set name="epoche">Kubismus</set>
+      </think>
+    </template>
+  </category>
+  <category>
+    <pattern>XCHECKART ALBRECHT DUERER</pattern>
+    <template>
+      <think>
+        <set name="bild">Betende Haende</set>
+        <set name="epoche">Renaissance</set>
+      </think>
+    </template>
+  </category>
+</aiml>

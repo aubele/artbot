@@ -1,0 +1,2341 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "hi in die runde"
+      },
+      {
+        "intent": "greet",
+        "text": "guten morgen"
+      },
+      {
+        "intent": "greet",
+        "text": "hallo hier"
+      },
+      {
+        "intent": "greet",
+        "text": "hallo an alle"
+      },
+      {
+        "intent": "greet",
+        "text": "grüß gott"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "servus"
+      },
+      {
+        "intent": "goodbye",
+        "text": "auf wiedersehen artbot"
+      },
+      {
+        "intent": "goodbye",
+        "text": "ciao bot"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bis dann"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bis später chatbot"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye bot"
+      },
+      {
+        "intent": "goodbye",
+        "text": "tschau chatbot"
+      },
+      {
+        "intent": "goodbye",
+        "text": "tschau bot"
+      },
+      {
+        "intent": "condition",
+        "text": "und alles klar?"
+      },
+      {
+        "intent": "condition",
+        "text": "und wie geht es dir?"
+      },
+      {
+        "intent": "condition",
+        "text": "alles klar?"
+      },
+      {
+        "intent": "tellcondition",
+        "text": "mir geht es gut"
+      },
+      {
+        "intent": "affirm",
+        "text": "korrekt"
+      },
+      {
+        "intent": "deny",
+        "text": "das gefällt mir nicht"
+      },
+      {
+        "intent": "deny",
+        "text": "ich denke nicht"
+      },
+      {
+        "intent": "bot_challenge",
+        "text": "spreche ich mit einem computer?"
+      },
+      {
+        "intent": "bot_challenge",
+        "text": "bist du eine maschine?"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 71,
+            "entity": "art",
+            "start": 25,
+            "value": "The Virgin and Child surrounded by Five Angels"
+          },
+          {
+            "end": 87,
+            "entity": "artist",
+            "start": 80,
+            "value": "Gauguin"
+          }
+        ],
+        "text": "ich hätte gerne ein bild The Virgin and Child surrounded by Five Angels von dem Gauguin anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 21,
+            "entity": "artist",
+            "start": 12,
+            "value": "Delacroix"
+          },
+          {
+            "end": 182,
+            "entity": "art",
+            "start": 51,
+            "value": "A Soft Watch Put in the Appropriate Place to Cause a Young Ephebe to Die and Be Resuscitated by Excess of Satisfaction - unfinished"
+          }
+        ],
+        "text": "ich von dem Delacroix das ein kunstwerk namens die A Soft Watch Put in the Appropriate Place to Cause a Young Ephebe to Die and Be Resuscitated by Excess of Satisfaction - unfinished anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 41,
+            "entity": "artist",
+            "start": 29,
+            "value": "Marc Chagall"
+          },
+          {
+            "end": 57,
+            "entity": "art",
+            "start": 53,
+            "value": "Life"
+          }
+        ],
+        "text": "präsentiere mir von Künstler Marc Chagall das namens Life"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 37,
+            "entity": "art",
+            "start": 30,
+            "value": "Bathers"
+          }
+        ],
+        "text": "präsentiere mir bilder namens Bathers"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 41,
+            "entity": "art",
+            "start": 26,
+            "value": "Frederic Chopin"
+          }
+        ],
+        "text": "würde gerne ein kunstwerk Frederic Chopin anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 54,
+            "entity": "art",
+            "start": 35,
+            "value": "The Death of Seneca"
+          },
+          {
+            "end": 67,
+            "entity": "artist",
+            "start": 59,
+            "value": "da Vinci"
+          }
+        ],
+        "text": "ich habe interesse werke heißt die The Death of Seneca von da Vinci sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 48,
+            "entity": "art",
+            "start": 28,
+            "value": "Alexander and Roxana"
+          }
+        ],
+        "text": "hätte gerne ein bild namens Alexander and Roxana"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 38,
+            "entity": "artist",
+            "start": 17,
+            "value": "Pierre-Auguste Renoir"
+          },
+          {
+            "end": 86,
+            "entity": "art",
+            "start": 63,
+            "value": "Poppy Field, Argenteuil"
+          }
+        ],
+        "text": "von dem Künstler Pierre-Auguste Renoir das ein bild namens die Poppy Field, Argenteuil"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 24,
+            "entity": "artist",
+            "start": 20,
+            "value": "Dali"
+          },
+          {
+            "end": 62,
+            "entity": "art",
+            "start": 40,
+            "value": "Le Chateau de Thoraise"
+          }
+        ],
+        "text": "präsentiere mir von Dali bild heißt die Le Chateau de Thoraise"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 23,
+            "entity": "artist",
+            "start": 18,
+            "value": "Manet"
+          },
+          {
+            "end": 75,
+            "entity": "art",
+            "start": 46,
+            "value": "Mother and child on the beach"
+          }
+        ],
+        "text": "zeige mir von dem Manet das ein kunstwerk die Mother and child on the beach"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 22,
+            "entity": "artist",
+            "start": 10,
+            "value": "Marc Chagall"
+          },
+          {
+            "end": 65,
+            "entity": "art",
+            "start": 45,
+            "value": "Apple Trees in Bloom"
+          }
+        ],
+        "text": "zeige von Marc Chagall kunstwerke namens die Apple Trees in Bloom"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 35,
+            "entity": "artist",
+            "start": 29,
+            "value": "Renoir"
+          },
+          {
+            "end": 71,
+            "entity": "art",
+            "start": 56,
+            "value": "Frederic Chopin"
+          }
+        ],
+        "text": "würde gerne von dem Künstler Renoir das ein bild namens Frederic Chopin anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 29,
+            "entity": "art",
+            "start": 15,
+            "value": "The Invocation"
+          },
+          {
+            "end": 41,
+            "entity": "artist",
+            "start": 34,
+            "value": "Courbet"
+          }
+        ],
+        "text": "ich bilder die The Invocation von Courbet zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 22,
+            "entity": "artist",
+            "start": 8,
+            "value": "Francisco Goya"
+          },
+          {
+            "end": 60,
+            "entity": "art",
+            "start": 45,
+            "value": "The Last Supper"
+          }
+        ],
+        "text": "mir von Francisco Goya das ein kunstwerk die The Last Supper"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 29,
+            "entity": "art",
+            "start": 0,
+            "value": "Mother and child on the beach"
+          }
+        ],
+        "text": "Mother and child on the beach"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 51,
+            "entity": "artist",
+            "start": 46,
+            "value": "Peter"
+          }
+        ],
+        "text": "habe interesse ein kunstwerk von dem Künstler Peter betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 8,
+            "entity": "artist",
+            "start": 0,
+            "value": "Leonardo"
+          }
+        ],
+        "text": "Leonardo"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 34,
+            "entity": "art",
+            "start": 22,
+            "value": "Four Bathers"
+          }
+        ],
+        "text": "hätte gerne heißt die Four Bathers ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 23,
+            "entity": "artist",
+            "start": 19,
+            "value": "Dali"
+          },
+          {
+            "end": 111,
+            "entity": "art",
+            "start": 45,
+            "value": "Young Peasant Girl in a Straw Hat sitting in front of a wheatfield"
+          }
+        ],
+        "text": "habe interesse von Dali das kunstwerke heißt Young Peasant Girl in a Straw Hat sitting in front of a wheatfield ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 32,
+            "entity": "art",
+            "start": 11,
+            "value": "The Mystical Nativity"
+          },
+          {
+            "end": 55,
+            "entity": "artist",
+            "start": 50,
+            "value": "Degas"
+          }
+        ],
+        "text": "namens die The Mystical Nativity von dem Künstler Degas sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 26,
+            "entity": "artist",
+            "start": 14,
+            "value": "Michelangelo"
+          },
+          {
+            "end": 55,
+            "entity": "art",
+            "start": 31,
+            "value": "Study for a risen Christ"
+          }
+        ],
+        "text": "zeige von dem Michelangelo die Study for a risen Christ"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 53,
+            "entity": "art",
+            "start": 33,
+            "value": "Apple Trees in Bloom"
+          }
+        ],
+        "text": "hätte gerne kunstwerke heißt die Apple Trees in Bloom sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 56,
+            "entity": "art",
+            "start": 28,
+            "value": "By the Water - Near the Lake"
+          },
+          {
+            "end": 74,
+            "entity": "artist",
+            "start": 61,
+            "value": "Salvador Dali"
+          }
+        ],
+        "text": "ich würde gerne werke heißt By the Water - Near the Lake von Salvador Dali zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 12,
+            "entity": "art",
+            "start": 0,
+            "value": "Four Bathers"
+          }
+        ],
+        "text": "Four Bathers"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 61,
+            "entity": "art",
+            "start": 22,
+            "value": "Young Man Greeted by Seven Liberal Arts"
+          },
+          {
+            "end": 84,
+            "entity": "artist",
+            "start": 79,
+            "value": "Manet"
+          }
+        ],
+        "text": "ich bilder namens die Young Man Greeted by Seven Liberal Arts von dem Künstler Manet zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 38,
+            "entity": "art",
+            "start": 29,
+            "value": "Mona Lisa"
+          }
+        ],
+        "text": "hätte gerne das werke namens Mona Lisa"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 24,
+            "entity": "artist",
+            "start": 16,
+            "value": "Salvador"
+          },
+          {
+            "end": 59,
+            "entity": "art",
+            "start": 43,
+            "value": "The Ballet Class"
+          }
+        ],
+        "text": "würde gerne von Salvador ein kunstwerk die The Ballet Class ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 37,
+            "entity": "art",
+            "start": 16,
+            "value": "Women and white horse"
+          },
+          {
+            "end": 49,
+            "entity": "artist",
+            "start": 42,
+            "value": "Vincent"
+          }
+        ],
+        "text": "werke heißt die Women and white horse von Vincent anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 60,
+            "entity": "artist",
+            "start": 41,
+            "value": "de Toulouse-Lautrec"
+          }
+        ],
+        "text": "habe interesse ein bild von dem Künstler de Toulouse-Lautrec sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 52,
+            "entity": "art",
+            "start": 36,
+            "value": "The Mountain Hut"
+          },
+          {
+            "end": 71,
+            "entity": "artist",
+            "start": 66,
+            "value": "Henri"
+          }
+        ],
+        "text": "ich habe interesse werke namens die The Mountain Hut von Künstler Henri ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 25,
+            "entity": "artist",
+            "start": 19,
+            "value": "Rubens"
+          },
+          {
+            "end": 75,
+            "entity": "art",
+            "start": 36,
+            "value": "Studies for Pieta or The Last Judgement"
+          }
+        ],
+        "text": "habe interesse von Rubens das werke Studies for Pieta or The Last Judgement ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 44,
+            "entity": "artist",
+            "start": 31,
+            "value": "Pablo Picasso"
+          }
+        ],
+        "text": "ich hätte gerne werke Künstler Pablo Picasso anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 43,
+            "entity": "art",
+            "start": 30,
+            "value": "Self-portrait"
+          },
+          {
+            "end": 65,
+            "entity": "artist",
+            "start": 48,
+            "value": "Sandro Botticelli"
+          }
+        ],
+        "text": "ich hätte gerne ein kunstwerk Self-portrait von Sandro Botticelli"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 33,
+            "entity": "art",
+            "start": 0,
+            "value": "Sunlight Effect under the Poplars"
+          }
+        ],
+        "text": "Sunlight Effect under the Poplars"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 16,
+            "entity": "artist",
+            "start": 0,
+            "value": "Eugene Delacroix"
+          }
+        ],
+        "text": "Eugene Delacroix"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 17,
+            "entity": "artist",
+            "start": 0,
+            "value": "Sandro Botticelli"
+          }
+        ],
+        "text": "Sandro Botticelli"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 54,
+            "entity": "art",
+            "start": 22,
+            "value": "Repetition of the Dance - detail"
+          },
+          {
+            "end": 65,
+            "entity": "artist",
+            "start": 59,
+            "value": "Eugene"
+          }
+        ],
+        "text": "demonstriere bild die Repetition of the Dance - detail von Eugene"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 54,
+            "entity": "art",
+            "start": 38,
+            "value": "John the Baptist"
+          }
+        ],
+        "text": "ich hätte gerne kunstwerke namens die John the Baptist zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 18,
+            "entity": "artist",
+            "start": 12,
+            "value": "Eugene"
+          },
+          {
+            "end": 55,
+            "entity": "art",
+            "start": 38,
+            "value": "Leda and the Swan"
+          }
+        ],
+        "text": "mir von dem Eugene ein bild heißt die Leda and the Swan"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 34,
+            "entity": "art",
+            "start": 22,
+            "value": "Sitting Girl"
+          },
+          {
+            "end": 51,
+            "entity": "artist",
+            "start": 43,
+            "value": "Leonardo"
+          }
+        ],
+        "text": "habe interesse namens Sitting Girl von dem Leonardo zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 30,
+            "entity": "artist",
+            "start": 20,
+            "value": "Botticelli"
+          },
+          {
+            "end": 117,
+            "entity": "art",
+            "start": 51,
+            "value": "Young Peasant Girl in a Straw Hat sitting in front of a wheatfield"
+          }
+        ],
+        "text": "ich hätte gerne von Botticelli ein kunstwerk heißt Young Peasant Girl in a Straw Hat sitting in front of a wheatfield"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 55,
+            "entity": "art",
+            "start": 36,
+            "value": "Interior - The Rape"
+          },
+          {
+            "end": 81,
+            "entity": "artist",
+            "start": 69,
+            "value": "Paul Cezanne"
+          }
+        ],
+        "text": "ich hätte gerne ein bild namens die Interior - The Rape von Künstler Paul Cezanne anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 27,
+            "entity": "art",
+            "start": 0,
+            "value": "Dawn, Noon, Sunset and Dusk"
+          }
+        ],
+        "text": "Dawn, Noon, Sunset and Dusk"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 73,
+            "entity": "art",
+            "start": 5,
+            "value": "Booth of La Goulue at the Foire du Trone - Dance at the Moulin Rouge"
+          }
+        ],
+        "text": "bild Booth of La Goulue at the Foire du Trone - Dance at the Moulin Rouge zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 37,
+            "entity": "art",
+            "start": 0,
+            "value": "The sleep of reason produces monsters"
+          }
+        ],
+        "text": "The sleep of reason produces monsters"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 35,
+            "entity": "artist",
+            "start": 19,
+            "value": "Vincent van Gogh"
+          },
+          {
+            "end": 100,
+            "entity": "art",
+            "start": 55,
+            "value": "Self-Portrait with Dark Felt Hat at the Easel"
+          }
+        ],
+        "text": "zeige von Künstler Vincent van Gogh ein bild heißt die Self-Portrait with Dark Felt Hat at the Easel"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 95,
+            "entity": "art",
+            "start": 32,
+            "value": "The Virgin and Child with Saint Anne and Saint John the Baptist"
+          },
+          {
+            "end": 111,
+            "entity": "artist",
+            "start": 104,
+            "value": "Cezanne"
+          }
+        ],
+        "text": "ich würde gerne ein bild namens The Virgin and Child with Saint Anne and Saint John the Baptist von dem Cezanne anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 26,
+            "entity": "artist",
+            "start": 16,
+            "value": "Botticelli"
+          },
+          {
+            "end": 76,
+            "entity": "art",
+            "start": 47,
+            "value": "Portrait of Gaspard Schoppins"
+          }
+        ],
+        "text": "präsentiere von Botticelli das ein bild namens Portrait of Gaspard Schoppins"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 41,
+            "entity": "artist",
+            "start": 34,
+            "value": "Edouard"
+          }
+        ],
+        "text": "habe interesse werke von Künstler Edouard sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 36,
+            "entity": "artist",
+            "start": 23,
+            "value": "Pablo Picasso"
+          },
+          {
+            "end": 115,
+            "entity": "art",
+            "start": 47,
+            "value": "Booth of La Goulue at the Foire du Trone - Dance at the Moulin Rouge"
+          }
+        ],
+        "text": "zeige mir von Künstler Pablo Picasso heißt die Booth of La Goulue at the Foire du Trone - Dance at the Moulin Rouge"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 13,
+            "entity": "art",
+            "start": 0,
+            "value": "Autumn Sonata"
+          }
+        ],
+        "text": "Autumn Sonata"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 37,
+            "entity": "art",
+            "start": 28,
+            "value": "Nude Maja"
+          },
+          {
+            "end": 60,
+            "entity": "artist",
+            "start": 51,
+            "value": "Francisco"
+          }
+        ],
+        "text": "zeige mir bilder namens die Nude Maja von Künstler Francisco"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 26,
+            "entity": "artist",
+            "start": 16,
+            "value": "Botticelli"
+          },
+          {
+            "end": 62,
+            "entity": "art",
+            "start": 47,
+            "value": "The Last Supper"
+          }
+        ],
+        "text": "würde gerne von Botticelli das ein bild namens The Last Supper anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 78,
+            "entity": "art",
+            "start": 15,
+            "value": "The Virgin and Child with Saint Anne and Saint John the Baptist"
+          },
+          {
+            "end": 113,
+            "entity": "artist",
+            "start": 96,
+            "value": "Leonardo da Vinci"
+          }
+        ],
+        "text": "ich kunstwerke The Virgin and Child with Saint Anne and Saint John the Baptist von dem Künstler Leonardo da Vinci betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 37,
+            "entity": "art",
+            "start": 0,
+            "value": "The Greens - Seated Woman in a Garden"
+          }
+        ],
+        "text": "The Greens - Seated Woman in a Garden"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 32,
+            "entity": "artist",
+            "start": 20,
+            "value": "Claude Monet"
+          }
+        ],
+        "text": "präsentiere von dem Claude Monet"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 44,
+            "entity": "art",
+            "start": 31,
+            "value": "Self-portrait"
+          },
+          {
+            "end": 68,
+            "entity": "artist",
+            "start": 58,
+            "value": "Caravaggio"
+          }
+        ],
+        "text": "demonstriere kunstwerke namens Self-portrait von Künstler Caravaggio"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 32,
+            "entity": "art",
+            "start": 19,
+            "value": "Autumn Sonata"
+          },
+          {
+            "end": 41,
+            "entity": "artist",
+            "start": 37,
+            "value": "Goya"
+          }
+        ],
+        "text": "zeige mir ein bild Autumn Sonata von Goya"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 54,
+            "entity": "art",
+            "start": 42,
+            "value": "Four Bathers"
+          }
+        ],
+        "text": "ich hätte gerne das kunstwerke namens die Four Bathers zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 48,
+            "entity": "art",
+            "start": 19,
+            "value": "Portrait of the couple Sisley"
+          },
+          {
+            "end": 61,
+            "entity": "artist",
+            "start": 53,
+            "value": "da Vinci"
+          }
+        ],
+        "text": "demonstriere heißt Portrait of the couple Sisley von da Vinci"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 69,
+            "entity": "art",
+            "start": 30,
+            "value": "Young Man Greeted by Seven Liberal Arts"
+          },
+          {
+            "end": 91,
+            "entity": "artist",
+            "start": 83,
+            "value": "da Vinci"
+          }
+        ],
+        "text": "demonstriere mir werke namens Young Man Greeted by Seven Liberal Arts von Künstler da Vinci"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 34,
+            "entity": "artist",
+            "start": 17,
+            "value": "Leonardo da Vinci"
+          },
+          {
+            "end": 54,
+            "entity": "art",
+            "start": 44,
+            "value": "Still life"
+          }
+        ],
+        "text": "demonstriere von Leonardo da Vinci das bild Still life"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 28,
+            "entity": "art",
+            "start": 9,
+            "value": "Hesiod and the Muse"
+          },
+          {
+            "end": 51,
+            "entity": "artist",
+            "start": 42,
+            "value": "Rembrandt"
+          }
+        ],
+        "text": "ich bild Hesiod and the Muse von Künstler Rembrandt anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 39,
+            "entity": "art",
+            "start": 0,
+            "value": "Young Man Greeted by Seven Liberal Arts"
+          }
+        ],
+        "text": "Young Man Greeted by Seven Liberal Arts"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 21,
+            "entity": "art",
+            "start": 15,
+            "value": "Medusa"
+          }
+        ],
+        "text": "ich bilder die Medusa zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 31,
+            "entity": "art",
+            "start": 10,
+            "value": "Women and white horse"
+          },
+          {
+            "end": 57,
+            "entity": "artist",
+            "start": 45,
+            "value": "Paul Gauguin"
+          }
+        ],
+        "text": "ich heißt Women and white horse von Künstler Paul Gauguin sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 26,
+            "entity": "artist",
+            "start": 21,
+            "value": "Monet"
+          },
+          {
+            "end": 70,
+            "entity": "art",
+            "start": 53,
+            "value": "Leda and the Swan"
+          }
+        ],
+        "text": "demonstriere von dem Monet das kunstwerke namens die Leda and the Swan"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 7,
+            "entity": "art",
+            "start": 0,
+            "value": "Bathers"
+          }
+        ],
+        "text": "Bathers"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 27,
+            "entity": "artist",
+            "start": 20,
+            "value": "Cezanne"
+          },
+          {
+            "end": 68,
+            "entity": "art",
+            "start": 33,
+            "value": "Beheading of Saint John the Baptist"
+          }
+        ],
+        "text": "präsentiere von dem Cezanne bild Beheading of Saint John the Baptist"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 28,
+            "entity": "artist",
+            "start": 16,
+            "value": "Marc Chagall"
+          },
+          {
+            "end": 80,
+            "entity": "art",
+            "start": 42,
+            "value": "The Courtyard of the Hospital at Arles"
+          }
+        ],
+        "text": "präsentiere von Marc Chagall ein bild die The Courtyard of the Hospital at Arles"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 23,
+            "entity": "artist",
+            "start": 16,
+            "value": "Picasso"
+          },
+          {
+            "end": 61,
+            "entity": "art",
+            "start": 48,
+            "value": "Large Bathers"
+          }
+        ],
+        "text": "würde gerne von Picasso das ein kunstwerk heißt Large Bathers sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 40,
+            "entity": "artist",
+            "start": 21,
+            "value": "de Toulouse-Lautrec"
+          }
+        ],
+        "text": "würde gerne bild dem de Toulouse-Lautrec betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 13,
+            "entity": "artist",
+            "start": 0,
+            "value": "Salvador Dali"
+          }
+        ],
+        "text": "Salvador Dali"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 14,
+            "entity": "art",
+            "start": 0,
+            "value": "The Big Circus"
+          }
+        ],
+        "text": "The Big Circus"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 31,
+            "entity": "artist",
+            "start": 24,
+            "value": "Courbet"
+          },
+          {
+            "end": 70,
+            "entity": "art",
+            "start": 51,
+            "value": "Lady with a Lap Dog"
+          }
+        ],
+        "text": "präsentiere mir von dem Courbet das kunstwerke die Lady with a Lap Dog"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 12,
+            "entity": "artist",
+            "start": 0,
+            "value": "Paul Gauguin"
+          }
+        ],
+        "text": "Paul Gauguin"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 61,
+            "entity": "art",
+            "start": 29,
+            "value": "Male nude and arm of bearded man"
+          },
+          {
+            "end": 87,
+            "entity": "artist",
+            "start": 75,
+            "value": "Paul Gauguin"
+          }
+        ],
+        "text": "präsentiere werke namens die Male nude and arm of bearded man von Künstler Paul Gauguin"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 51,
+            "entity": "artist",
+            "start": 39,
+            "value": "Michelangelo"
+          }
+        ],
+        "text": "ich würde gerne werke von dem Künstler Michelangelo ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 25,
+            "entity": "artist",
+            "start": 13,
+            "value": "Paul Cezanne"
+          },
+          {
+            "end": 74,
+            "entity": "art",
+            "start": 41,
+            "value": "Self-portrait in at the Age of 63"
+          }
+        ],
+        "text": "von Künstler Paul Cezanne kunstwerke die Self-portrait in at the Age of 63 sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 62,
+            "entity": "art",
+            "start": 27,
+            "value": "Paul Alexis Reading at Zola's House"
+          },
+          {
+            "end": 81,
+            "entity": "artist",
+            "start": 67,
+            "value": "Francisco Goya"
+          }
+        ],
+        "text": "ich würde gerne namens die Paul Alexis Reading at Zola's House von Francisco Goya anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 48,
+            "entity": "art",
+            "start": 34,
+            "value": "Paysage Guyere"
+          },
+          {
+            "end": 76,
+            "entity": "artist",
+            "start": 62,
+            "value": "Francisco Goya"
+          }
+        ],
+        "text": "demonstriere kunstwerke heißt die Paysage Guyere von Künstler Francisco Goya"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 33,
+            "entity": "art",
+            "start": 0,
+            "value": "The Races in the Bois de Boulogne"
+          }
+        ],
+        "text": "The Races in the Bois de Boulogne"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 54,
+            "entity": "art",
+            "start": 26,
+            "value": "The Torment of Saint Anthony"
+          },
+          {
+            "end": 64,
+            "entity": "artist",
+            "start": 59,
+            "value": "Manet"
+          }
+        ],
+        "text": "demonstriere bilder heißt The Torment of Saint Anthony von Manet"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 22,
+            "entity": "art",
+            "start": 0,
+            "value": "Abandonment - The pair"
+          }
+        ],
+        "text": "Abandonment - The pair"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 39,
+            "entity": "art",
+            "start": 23,
+            "value": "John the Baptist"
+          }
+        ],
+        "text": "das ein bild heißt die John the Baptist ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 9,
+            "entity": "art",
+            "start": 0,
+            "value": "Mona Lisa"
+          }
+        ],
+        "text": "Mona Lisa"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 105,
+            "entity": "art",
+            "start": 37,
+            "value": "Booth of La Goulue at the Foire du Trone - Dance at the Moulin Rouge"
+          },
+          {
+            "end": 118,
+            "entity": "artist",
+            "start": 114,
+            "value": "Paul"
+          }
+        ],
+        "text": "präsentiere mir ein kunstwerk namens Booth of La Goulue at the Foire du Trone - Dance at the Moulin Rouge von dem Paul"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 4,
+            "entity": "artist",
+            "start": 0,
+            "value": "Paul"
+          }
+        ],
+        "text": "Paul"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 55,
+            "entity": "art",
+            "start": 18,
+            "value": "The Greens - Seated Woman in a Garden"
+          },
+          {
+            "end": 87,
+            "entity": "artist",
+            "start": 73,
+            "value": "Pierre-Auguste"
+          }
+        ],
+        "text": "demonstriere bild The Greens - Seated Woman in a Garden von dem Künstler Pierre-Auguste"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 23,
+            "entity": "art",
+            "start": 0,
+            "value": "Resurrection of Lazarus"
+          }
+        ],
+        "text": "Resurrection of Lazarus"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 35,
+            "entity": "artist",
+            "start": 29,
+            "value": "Sandro"
+          },
+          {
+            "end": 67,
+            "entity": "art",
+            "start": 49,
+            "value": "The Last Judgement"
+          }
+        ],
+        "text": "präsentiere mir von Künstler Sandro bilder heißt The Last Judgement"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 60,
+            "entity": "art",
+            "start": 0,
+            "value": "Booth of La Goulue at the Foire du Trone - The Moorish Dance"
+          }
+        ],
+        "text": "Booth of La Goulue at the Foire du Trone - The Moorish Dance"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 39,
+            "entity": "artist",
+            "start": 33,
+            "value": "Renoir"
+          },
+          {
+            "end": 72,
+            "entity": "art",
+            "start": 59,
+            "value": "Self-portrait"
+          }
+        ],
+        "text": "ich würde gerne von dem Künstler Renoir das ein bild heißt Self-portrait anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 38,
+            "entity": "art",
+            "start": 0,
+            "value": "The Courtyard of the Hospital at Arles"
+          }
+        ],
+        "text": "The Courtyard of the Hospital at Arles"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 34,
+            "entity": "artist",
+            "start": 25,
+            "value": "Francisco"
+          },
+          {
+            "end": 63,
+            "entity": "art",
+            "start": 48,
+            "value": "A boy with pipe"
+          }
+        ],
+        "text": "demonstriere mir von dem Francisco bilder heißt A boy with pipe"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 40,
+            "entity": "art",
+            "start": 0,
+            "value": "The Execution of the Doge Marino Faliero"
+          }
+        ],
+        "text": "The Execution of the Doge Marino Faliero"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 70,
+            "entity": "art",
+            "start": 27,
+            "value": "Greece expiring on the Ruins of Missolonghi"
+          }
+        ],
+        "text": "würde gerne das bild heißt Greece expiring on the Ruins of Missolonghi"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 46,
+            "entity": "art",
+            "start": 16,
+            "value": "Head and Right Hand of a Woman"
+          }
+        ],
+        "text": "zeige mir heißt Head and Right Hand of a Woman"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 49,
+            "entity": "art",
+            "start": 36,
+            "value": "Self-portrait"
+          }
+        ],
+        "text": "ich habe interesse das werke namens Self-portrait"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 37,
+            "entity": "artist",
+            "start": 25,
+            "value": "Michelangelo"
+          },
+          {
+            "end": 67,
+            "entity": "art",
+            "start": 48,
+            "value": "The Death of Seneca"
+          }
+        ],
+        "text": "demonstriere mir von dem Michelangelo das werke The Death of Seneca"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 30,
+            "entity": "artist",
+            "start": 24,
+            "value": "Renoir"
+          }
+        ],
+        "text": "ich bilder von Künstler Renoir anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 42,
+            "entity": "art",
+            "start": 0,
+            "value": "Nativity with St. Francis and St. Lawrence"
+          }
+        ],
+        "text": "Nativity with St. Francis and St. Lawrence"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 46,
+            "entity": "art",
+            "start": 33,
+            "value": "Large Bathers"
+          },
+          {
+            "end": 70,
+            "entity": "artist",
+            "start": 64,
+            "value": "Claude"
+          }
+        ],
+        "text": "würde gerne ein kunstwerk namens Large Bathers von dem Künstler Claude betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 48,
+            "entity": "artist",
+            "start": 34,
+            "value": "Pierre-Auguste"
+          }
+        ],
+        "text": "ich würde gerne ein kunstwerk von Pierre-Auguste betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 41,
+            "entity": "artist",
+            "start": 24,
+            "value": "Leonardo da Vinci"
+          },
+          {
+            "end": 90,
+            "entity": "art",
+            "start": 57,
+            "value": "Self-portrait in at the Age of 63"
+          }
+        ],
+        "text": "ich würde gerne von dem Leonardo da Vinci das bilder die Self-portrait in at the Age of 63 anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 19,
+            "entity": "artist",
+            "start": 14,
+            "value": "Peter"
+          },
+          {
+            "end": 48,
+            "entity": "art",
+            "start": 39,
+            "value": "Nude Maja"
+          }
+        ],
+        "text": "zeige von dem Peter das kunstwerke die Nude Maja"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 50,
+            "entity": "art",
+            "start": 36,
+            "value": "Paysage Guyere"
+          },
+          {
+            "end": 63,
+            "entity": "artist",
+            "start": 59,
+            "value": "Marc"
+          }
+        ],
+        "text": "präsentiere ein kunstwerk heißt die Paysage Guyere von dem Marc"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 23,
+            "entity": "art",
+            "start": 0,
+            "value": "Portrait of a Young Man"
+          }
+        ],
+        "text": "Portrait of a Young Man"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 36,
+            "entity": "art",
+            "start": 17,
+            "value": "Hesiod and the Muse"
+          }
+        ],
+        "text": "ich bilder heißt Hesiod and the Muse anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 30,
+            "entity": "artist",
+            "start": 20,
+            "value": "Caravaggio"
+          }
+        ],
+        "text": "hätte gerne von dem Caravaggio betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 36,
+            "entity": "art",
+            "start": 26,
+            "value": "Still life"
+          },
+          {
+            "end": 51,
+            "entity": "artist",
+            "start": 45,
+            "value": "Eugene"
+          }
+        ],
+        "text": "zeige mir ein bild namens Still life von dem Eugene"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 44,
+            "entity": "art",
+            "start": 32,
+            "value": "Sitting Girl"
+          },
+          {
+            "end": 67,
+            "entity": "artist",
+            "start": 53,
+            "value": "Pierre-Auguste"
+          }
+        ],
+        "text": "ich habe interesse bilder heißt Sitting Girl von dem Pierre-Auguste anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 27,
+            "entity": "artist",
+            "start": 21,
+            "value": "Claude"
+          },
+          {
+            "end": 89,
+            "entity": "art",
+            "start": 42,
+            "value": "Landscape with Couple Walking and Crescent Moon"
+          }
+        ],
+        "text": "demonstriere mir von Claude ein kunstwerk Landscape with Couple Walking and Crescent Moon"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 46,
+            "entity": "art",
+            "start": 34,
+            "value": "Four Bathers"
+          },
+          {
+            "end": 65,
+            "entity": "artist",
+            "start": 60,
+            "value": "Degas"
+          }
+        ],
+        "text": "demonstriere mir bilder heißt die Four Bathers von Künstler Degas"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 42,
+            "entity": "art",
+            "start": 17,
+            "value": "Ambroise Vollard Portrait"
+          }
+        ],
+        "text": "das werke namens Ambroise Vollard Portrait"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 36,
+            "entity": "artist",
+            "start": 29,
+            "value": "Vincent"
+          },
+          {
+            "end": 76,
+            "entity": "art",
+            "start": 53,
+            "value": "Portrait of a Young Man"
+          }
+        ],
+        "text": "hätte gerne von dem Künstler Vincent das bild namens Portrait of a Young Man zeigen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 44,
+            "entity": "artist",
+            "start": 33,
+            "value": "Edgar Degas"
+          }
+        ],
+        "text": "habe interesse ein bild Künstler Edgar Degas anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 48,
+            "entity": "artist",
+            "start": 29,
+            "value": "de Toulouse-Lautrec"
+          },
+          {
+            "end": 94,
+            "entity": "art",
+            "start": 55,
+            "value": "Studies for Pieta or The Last Judgement"
+          }
+        ],
+        "text": "ich würde gerne von Künstler de Toulouse-Lautrec heißt Studies for Pieta or The Last Judgement betrachten"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 48,
+            "entity": "artist",
+            "start": 38,
+            "value": "Botticelli"
+          }
+        ],
+        "text": "ich würde gerne ein bild dem Künstler Botticelli anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 39,
+            "entity": "art",
+            "start": 19,
+            "value": "Apple Trees in Bloom"
+          },
+          {
+            "end": 51,
+            "entity": "artist",
+            "start": 44,
+            "value": "Vincent"
+          }
+        ],
+        "text": "präsentiere namens Apple Trees in Bloom von Vincent"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 31,
+            "entity": "artist",
+            "start": 12,
+            "value": "de Toulouse-Lautrec"
+          },
+          {
+            "end": 53,
+            "entity": "art",
+            "start": 48,
+            "value": "Medea"
+          }
+        ],
+        "text": "ich von dem de Toulouse-Lautrec ein bild namens Medea ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 21,
+            "entity": "art",
+            "start": 0,
+            "value": "Women and white horse"
+          }
+        ],
+        "text": "Women and white horse"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 34,
+            "entity": "artist",
+            "start": 29,
+            "value": "Monet"
+          },
+          {
+            "end": 87,
+            "entity": "art",
+            "start": 57,
+            "value": "Family of Acrobats with Monkey"
+          }
+        ],
+        "text": "würde gerne von dem Künstler Monet kunstwerke namens die Family of Acrobats with Monkey"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 39,
+            "entity": "artist",
+            "start": 35,
+            "value": "Marc"
+          }
+        ],
+        "text": "würde gerne ein kunstwerk Künstler Marc sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 31,
+            "entity": "artist",
+            "start": 27,
+            "value": "Dali"
+          }
+        ],
+        "text": "präsentiere mir kunstwerke Dali"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 94,
+            "entity": "art",
+            "start": 31,
+            "value": "Portrait after a Costume Ball - Portrait of Madame Dietz Monnin"
+          },
+          {
+            "end": 106,
+            "entity": "artist",
+            "start": 99,
+            "value": "Picasso"
+          }
+        ],
+        "text": "demonstriere bilder namens die Portrait after a Costume Ball - Portrait of Madame Dietz Monnin von Picasso"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 18,
+            "entity": "artist",
+            "start": 14,
+            "value": "Marc"
+          },
+          {
+            "end": 76,
+            "entity": "art",
+            "start": 40,
+            "value": "Entrance to the Moulin de la Galette"
+          }
+        ],
+        "text": "zeige mir von Marc das bilder heißt die Entrance to the Moulin de la Galette"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 33,
+            "entity": "art",
+            "start": 0,
+            "value": "Self-portrait in at the Age of 63"
+          }
+        ],
+        "text": "Self-portrait in at the Age of 63"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 32,
+            "entity": "artist",
+            "start": 27,
+            "value": "Henri"
+          },
+          {
+            "end": 69,
+            "entity": "art",
+            "start": 46,
+            "value": "Resurrection of Lazarus"
+          }
+        ],
+        "text": "ich habe interesse von dem Henri das bild die Resurrection of Lazarus ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 22,
+            "entity": "art",
+            "start": 0,
+            "value": "Le Chateau de Thoraise"
+          }
+        ],
+        "text": "Le Chateau de Thoraise"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 28,
+            "entity": "art",
+            "start": 0,
+            "value": "By the Water - Near the Lake"
+          }
+        ],
+        "text": "By the Water - Near the Lake"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 52,
+            "entity": "art",
+            "start": 33,
+            "value": "Lady with a Lap Dog"
+          },
+          {
+            "end": 73,
+            "entity": "artist",
+            "start": 66,
+            "value": "Edouard"
+          }
+        ],
+        "text": "hätte gerne ein kunstwerk namens Lady with a Lap Dog von Künstler Edouard anschauen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 28,
+            "entity": "art",
+            "start": 0,
+            "value": "Young Woman in Oriental Garb"
+          }
+        ],
+        "text": "Young Woman in Oriental Garb"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 52,
+            "entity": "art",
+            "start": 40,
+            "value": "The Birthday"
+          }
+        ],
+        "text": "ich habe interesse ein kunstwerk namens The Birthday ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 25,
+            "entity": "artist",
+            "start": 13,
+            "value": "Paul Cezanne"
+          },
+          {
+            "end": 51,
+            "entity": "art",
+            "start": 31,
+            "value": "The Port of Bordeaux"
+          }
+        ],
+        "text": "von Künstler Paul Cezanne bild The Port of Bordeaux"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 56,
+            "entity": "art",
+            "start": 36,
+            "value": "Homage to Meirronier"
+          },
+          {
+            "end": 74,
+            "entity": "artist",
+            "start": 65,
+            "value": "Delacroix"
+          }
+        ],
+        "text": "präsentiere mir ein bild namens die Homage to Meirronier von dem Delacroix"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 31,
+            "entity": "artist",
+            "start": 22,
+            "value": "Francisco"
+          }
+        ],
+        "text": "demonstriere bild von Francisco"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 44,
+            "entity": "art",
+            "start": 23,
+            "value": "The Mystical Nativity"
+          },
+          {
+            "end": 66,
+            "entity": "artist",
+            "start": 58,
+            "value": "Leonardo"
+          }
+        ],
+        "text": "würde gerne kunstwerke The Mystical Nativity von Künstler Leonardo ansehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 44,
+            "entity": "artist",
+            "start": 29,
+            "value": "Gustave Courbet"
+          },
+          {
+            "end": 105,
+            "entity": "art",
+            "start": 65,
+            "value": "The Execution of the Doge Marino Faliero"
+          }
+        ],
+        "text": "hätte gerne von dem Künstler Gustave Courbet das ein bild namens The Execution of the Doge Marino Faliero sehen"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 34,
+            "entity": "artist",
+            "start": 21,
+            "value": "Pablo Picasso"
+          },
+          {
+            "end": 71,
+            "entity": "art",
+            "start": 57,
+            "value": "The Big Circus"
+          }
+        ],
+        "text": "demonstriere von dem Pablo Picasso das ein kunstwerk die The Big Circus"
+      },
+      {
+        "intent": "tell_art_and_artist",
+        "entities": [
+          {
+            "end": 67,
+            "entity": "art",
+            "start": 32,
+            "value": "Paul Alexis Reading at Zola's House"
+          }
+        ],
+        "text": "präsentiere mir werke heißt die Paul Alexis Reading at Zola's House"
+      },
+      {
+        "intent": "want_art",
+        "text": "ich würde gerne werke ansehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "jo würde gerne bilder zeigen"
+      },
+      {
+        "intent": "want_art",
+        "text": "ja habe bock bild ansehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "ich ein kunstwerk anschauen"
+      },
+      {
+        "intent": "want_art",
+        "text": "ja ich würde kunstwerke zeigen"
+      },
+      {
+        "intent": "want_art",
+        "text": "habe bock werke sehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "gerne ich würde bilder ansehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "gerne ich würde werke betrachten"
+      },
+      {
+        "intent": "want_art",
+        "text": "ich würde kunstwerke ansehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "jo hätte interesse bilder anschauen"
+      },
+      {
+        "intent": "want_art",
+        "text": "jo hätte interesse kunstwerke sehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "gerne hätte interesse werke betrachten"
+      },
+      {
+        "intent": "want_art",
+        "text": "gerne würde gerne ein bild sehen"
+      },
+      {
+        "intent": "want_art",
+        "text": "habe bock werke betrachten"
+      },
+      {
+        "intent": "want_art",
+        "text": "ich habe bock ein kunstwerk betrachten"
+      },
+      {
+        "intent": "want_art",
+        "text": "ja ich habe bock werke anschauen"
+      },
+      {
+        "intent": "want_art",
+        "text": "ja habe bock bilder zeigen"
+      },
+      {
+        "intent": "want_art",
+        "text": "werke"
+      },
+      {
+        "intent": "want_art",
+        "text": "gerne hätte interesse kunstwerke anschauen"
+      },
+      {
+        "intent": "want_art",
+        "text": "ja ich würde gerne ein kunstwerk sehen"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}

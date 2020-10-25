@@ -1,0 +1,38 @@
+\section{Performance (Fabio Aubele)}
+In diesem Kapitel soll dargelegt werden, mit welchen Wahrscheinlichkeiten die aus Kapitel \ref{sec:flow} vorgestellten neuronalen Netze die richtigen Klassifikationsergebnisse bestimmen. Dabei wird zunächst das Netz von Rasa NLU getestet, welches der Äußerung des Nutzers den korrekten Intent zuordnet. Daraufhin wird das neuronale Netz von Rasa Core untersucht, dass die nächste durchzuführende Aktion des Chatbots ermittelt.\\
+Rasa bietet dafür eine eigene Testfunktion an, welche in der Kommandozeile mit \texttt{rasa test} aufgerufen werden kann. Diese testet das angegebene Netz und gibt die Ergebnisse wieder. Hierbei werden alle falschen Testfälle in einer eigenen Datei abgelegt mitsamt der falschen Vorhersage. Auch werden die Ergebnisse grafisch aufbereitet mittels einer Konfusionsmatrix. Für eine genaue Dokumentation der Verwendung und der zurückgegebenen Ergebnisse siehe Quelle \cite{command} unter 'Evaluate a Model on Test Data'.\\
+\\
+Für Rasa NLU ist es möglich, die benutzten Daten in einen Trainings- und Testdatensatz zu teilen. Dies geschieht mit dem Befehl \texttt{rasa data split nlu}, welcher in Referenz \cite{command} unter 'Create a Train-Test Split' genauer erklärt ist. Dabei werden zufällige angegebene Äußerungen des Benutzers in die Datei zum Testen verschoben, mitsamt der Angabe zu welchem Intent diese Äußerung gehört und wo sich mögliche Entities aufhalten. Ein beispielhafter Eintrag ist in Code \ref{test} zu sehen. 
+\begin{lstlisting}[caption={Struktur eines Testfalles für Rasa NLU.}, label=test, lineskip=1pt, language=json, morekeywords={intent, entities, text, end, entity, start, value}]
+{
+  "intent": "tell_art_and_artist",
+  "entities": [
+    {
+    "end": 42,
+    "entity": "art",
+    "start": 33,
+    "value": "Mona Lisa"
+    }
+  ],
+  "text": "hätte gerne das kunstwerk Mona Lisa"
+},
+...
+\end{lstlisting}
+Wie zu sehen ist, wurde die Datei im json-Format generiert. Hierbei wird zunächst der Intent aufgezeigt, dann werden die Entities aufgelistet, mitsamt der Angabe wo im Satz die Entity anfängt und wo sie endet sowie der Entity-Name und -Wert. Am Ende wird der eigentliche Satz genannt. Der Testdatensatz, welcher 20\% der Gesamtdatengröße umfasst, hat eine Speichergröße von 61 KB, hierbei gibt es 184 Einträge nach der Form in Code \ref{test}. Der Trainingsdatensatz ist dahingegen 242 KB groß (80\% der Gesamtdatengröße).\\
+Nun sollen die Ergebnisse geschildert werden. Das für ArtBot verwendete neuronale Netz bestimmt lediglich drei Einträge der Testdaten falsch, wohingegen alle anderen Intents korrekt vorhergesagt worden sind. Dies ist eine Wahrscheinlichkeit von 0,983 oder 98,3\%. Diese Ergebnisse bestätigen, dass die Erkennung der Nachrichten des Benutzers optimal sind. Die extrahierten Entities, welche mit einem anderen Algorithmus innerhalb der Pipeline extrahiert werden (für eine genaue Erklärung siehe \ref{sec:flownlu}), wurden sogar mit einer 100\% Wahrscheinlichkeit bestimmt. Innerhalb von Anhang \ref{anhang:nlu} befindet sich die Konfusionsmatrix, welche die erzielten Ergebnisse für die Bestimmung des Intents grafisch aufbereitet. \\
+\\
+Nun gilt es, das neuronale Netz von Rasa Core zu testen. Hier müssen die Testdaten leider manuell erstellt werden, da Rasa keine Funktion zum Erzeugen der Testdaten implementiert hat. Dabei wurden die Stories verwendet, welche auch zum Training eingesetzt worden sind. Da die Testdaten sich jedoch von den Trainingsdaten unterscheiden müssen, wurden die innerhalb einer Story auftretenden Intents sowie die entsprechende Reaktion des Chatbots einzeln benutzt und zufällig mit den aus anderen Stories stammenden Intents plus Antworten des Bots zusammengesetzt. Die Bestandteile der Stories wurden also untereinander vermischt. Ein Beispiel hierfür ist in Code \ref{testcore} zu sehen.
+\begin{lstlisting}[caption={Struktur eines Testfalles für Rasa Core.}, label=testcore, lineskip=1pt, language=json, morekeywords={test_story4, artist, tell_art_and_artist, goodbye, tell_art_and_artist}]
+## test_story4
+* tell_art_and_artist{"artist": "Claude Monet"}
+  - slot{"artist": "Claude Monet"}
+  - action_fetch_artist
+* goodbye
+  - utter_goodbye
+* tell_art_and_artist
+  - utter_wrong_art
+...
+\end{lstlisting}
+Anfänglich wird der Name der Story genannt, welcher nur für eventuelles Debugging benötigt wird. Dann folgt der erste Intent, welcher ausgelöst wird, wenn der Benutzer nach einem Künstler fragt (Zeile 2). Daraufhin folgt eine Verabschiedung in Zeile 5 und 6 sowie der Intent, welcher ausgelöst wird, wenn der Nutzer ein Kunstwerk nennt, welches dem Chatbot nicht bekannt ist (Zeile 7). Nach dem ersten Intent wird in Zeile 3 noch eine Slot abgeändert, dies wird für das Testen jedoch ignoriert. In der Auswertung reagiert der Bot also nur mit \texttt{action\_fetch\_artist} aus Zeile 4.\\
+Auch ein Unterschied zu Rasa NLU ist hier, dass die Testdaten im Markdown-Format angelegt wurden. Insgesamt gibt es 52 Testfälle und die Datei hat eine Größe von 4 KB. Das neuronale Netz musste also für 52 Intents die korrekte Aktion des Chatbots ermitteln. Die verwendeten Trainingsdaten sind in mehrere Dateien aufgetrennt und haben eine ungefähre Gesamtgröße von 6 KB.\\
+Als Ergebnis wurde lediglich eine Aktion falsch vorhergesagt, wodurch 0,98 bzw. 98\% der Testfälle korrekt bestimmt worden sind. Dies bedeutet, dass auch das Netz für die Bestimmung der nächsten Aktionen des Chatbots sehr zuverlässig arbeitet. Innerhalb von Anhang \ref{anhang:core} ist die Konfusionsmatrix zu finden, welche die erzielten Ergebnisse für die Bestimmung der nächsten Aktion des Chatbots nochmals grafisch darstellt.

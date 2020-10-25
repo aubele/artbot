@@ -1,0 +1,5 @@
+Um den Server für die Web-API zu starten:
+rasa run -m models --enable-api --cors "*" --debug
+
+Um den Action-Server zu starten:
+rasa run actions

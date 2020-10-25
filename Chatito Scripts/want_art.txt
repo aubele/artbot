@@ -1,0 +1,34 @@
+# Ways to request a restaurant within a location (using probability operator)
+# NOTE: 60% of the examples should come from the first sentence, and 40% from the second
+
+%[want_art]('training': '100', 'testing': '100')
+    *[100%] ~[agree?] ~[me?] ~[help?] ~[img] ~[look?]
+
+~[img]
+    bilder
+    kunstwerke
+    bild
+    ein bild
+    werke
+    ein kunstwerk
+
+~[look]
+    sehen
+    anschauen
+    betrachten
+    ansehen
+    zeigen
+
+~[agree]
+    ja
+    gerne
+    jo
+
+~[me]
+    ich
+
+~[help]
+    würde
+    würde gerne
+    hätte interesse
+    habe bock

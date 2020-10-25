@@ -1,0 +1,31 @@
+\usepackage{fancyhdr}          % Kopf und Fußzeile
+\usepackage{lastpage}          % Gesamtanzahl der Seiten
+
+\pagestyle{fancy}
+\fancypagestyle{style1}{
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{
+	\markboth{\ifnum\value{section}=0 \else\thesection.\ \fi ##1}{}%
+}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[C]{}
+\fancyhead[R]{\student}
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+\fancyfoot[L]{}
+\fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+}
+
+\fancypagestyle{style2}{
+	\fancyhf{}
+	\renewcommand{\sectionmark}[1]{
+		\markboth{\ifnum\value{section}=0 \else\thesection.\ \fi ##1}{}%
+	}
+	\fancyhead[L]{Abkürzungsverzeichnis}
+	\fancyhead[C]{}
+	\fancyhead[R]{\student}
+	\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+	
+	\fancyfoot[L]{}
+	\fancyfoot[R]{Seite \thepage\ von \pageref{LastPage}}
+}

@@ -1,0 +1,56 @@
+Art und Artist in einem Satz:
+- korrekt
+- zweimal korrekt hintereinander
+- artist nur vorname
+- artist nur nachname
+- artist falsch
+- art falsch
+- beides falsch -> Künstler wird als falsch angegeben
+- art nicht erkannt -> geht in 'nur Künstler' rein (kann passieren, insbesondere bei deutschen Bildnamen)
+- artist nicht erkannt -> geht in 'nur Art' rein (sollte nur bei sehr seltsamen Namen passieren)
+- beides nicht erkannt -> utter_unkown
+- art zu ungenau, mehrere Bilder kommen infrage ('The Virgin' von Leonardo da Vinci)
+- artist zu ungenau, mehrere Künstler kommen infrage (Irgendein Bild von 'Paul')
+- beides zu ungenau -> Künstler wird als ungenau angegeben
+
+- exakter Titel (Self-portrait)
+- artist falsch geschrieben (so das er aber noch erkannt wird: da Vinci - Leonardo da Vinci) -> extra Ausgabe
+- art falsch geschrieben (Mona Li -> Mona Lisa) -> extra Ausgabe
+- beides falsch geschrieben -> extra Ausgabe
+- exakter Titel und artist falsch geschrieben -> extra Ausgabe
+- artist falsch geschrieben und mehrere Bilder kommen infrage -> extra Ausgabe
+
+
+Erst Artist und dann Art:
+- korrekt
+- artist falsch
+- art falsch (evtl. Probleme wenn zu ungenau, dann: utter_unknown)
+- artist nur vorname
+- artist nur nachname
+- artist, dann nochmal artist
+- artist, dann art, dann art
+- artist, dann art falsch, dann art korrekt
+- artist, dann art korrekt, dann art falsch
+- artist nicht erkannt -> utter_unknown
+- art nicht erkannt -> utter_unknown
+- artist zu ungenau, mehrere Künstler kommen infrage
+- art zu ungenau, mehrere Bilder kommen infrage ('The Virgin')
+
+- exakter Titel (Self-portrait)
+- artist falsch geschrieben (so das er aber noch erkannt wird: da Vinci - Leonardo da Vinci) -> extra Ausgabe
+- art falsch geschrieben (Mona Li - Mona Lisa) -> extra Ausgabe
+- art falsch geschrieben und davor artist falsch geschrieben -> keine extra Ausgabe bezogen auf Künstler
+- art korrekt und davor artist falsch geschrieben -> keine extra Ausgabe
+- exakter Titel und artist davor falsch geschrieben -> keine extra Ausgabe
+- art zu ungenau, mehrere Bilder kommen infrage und davor artist falsch geschrieben -> keine extra Ausgabe
+
+
+Nur Art:
+- art korrekt
+- art falsch
+- art, dann nochmal art
+- art zu ungenau, mehrere Bilder kommen infrage ('The')
+- art nicht erkannt -> utter_unknown
+
+- exakter Titel (Self-portrait)
+- art falsch geschrieben (Mona Li - Mona Lisa) -> extra Ausgabe

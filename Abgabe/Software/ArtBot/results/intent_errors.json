@@ -1,0 +1,26 @@
+[
+  {
+    "text": "korrekt",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "tell_art_and_artist",
+      "confidence": 0.1708708256483078
+    }
+  },
+  {
+    "text": "würde gerne ein kunstwerk Frederic Chopin anschauen",
+    "intent": "tell_art_and_artist",
+    "intent_prediction": {
+      "name": "want_art",
+      "confidence": 0.6868658661842346
+    }
+  },
+  {
+    "text": "Autumn Sonata",
+    "intent": "tell_art_and_artist",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.19032400846481323
+    }
+  }
+]

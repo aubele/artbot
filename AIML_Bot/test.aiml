@@ -1,0 +1,13 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<category>
+<pattern>XCHECKPATIENT JANE PETERSON</pattern>
+    <template>
+        <think>
+           <set name="firstname">Jane</set>
+           <set name="surname">Peterson</set>
+           <set name="age">32</set>
+           <set name="weight">90kg</set>
+        </think>
+    </template>
+</category>
+</aiml>

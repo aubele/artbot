@@ -1,0 +1,32 @@
+import ./tellArt.chatito
+import ./artist.chatito
+
+# Ways to request a restaurant within a location (using probability operator)
+# NOTE: 60% of the examples should come from the first sentence, and 40% from the second
+
+%[tell_art_and_artist]('training': '100', 'testing': '100', 'distribution': 'regular')
+    ~[ich?] ~[help?] ~[img?] ~[von?] @[artist] ~[look?]
+    ~[show] ~[mir?] ~[img?] ~[von?] @[artist]
+
+
+import ./tellArt.chatito
+import ./art.chatito
+
+# Ways to request a restaurant within a location (using probability operator)
+# NOTE: 60% of the examples should come from the first sentence, and 40% from the second
+
+%[tell_art_and_artist]('training': '100', 'testing': '100', 'distribution': 'regular')
+    ~[ich?] ~[help?] ~[das?] ~[img?] ~[call?] @[art] ~[look?]
+    ~[show] ~[mir?] ~[das?] ~[img?] ~[call?] @[art]
+
+
+import ./tellArt.chatito
+import ./artist.chatito
+import ./art.chatito
+
+# Ways to request a restaurant within a location (using probability operator)
+# NOTE: 60% of the examples should come from the first sentence, and 40% from the second
+
+%[tell_art_and_artist]('training': '100', 'testing': '100', 'distribution': 'regular')
+    ~[ich?] ~[help?] ~[von] @[artist] ~[das?] ~[img?] ~[call?] @[art] ~[look?]
+    ~[show?] ~[mir?] ~[von] @[artist] ~[das?] ~[img?] ~[call?] @[art]

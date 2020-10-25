@@ -1,0 +1,52 @@
+Voraussetzungen:
+Python 3.6 oder 3.7 
+Windows 10
+
+
+Benutzen einer Virtuellen Umgebung für Python
+Installieren von venv: pip3 install virtualenv
+
+Anlegen der virtuellen Umgebung: virtualenv [Path/Name des virtuellen Environments]
+Beispiel: virtualenv H:/Abgabe/venv
+
+Aktivieren der Umgebung: [Pfad der virtuellen Umgebung]/scripts/activate.bat
+Beispiel: H:/Abgabe/venv/scripts/activate.bat
+Nur kurz starten um zu testen ob die virtuelle Umgebung funktioniert.
+
+
+Für Rasa werden weitere Dependencies benötigt die installiert werden müssen:
+Hierfür müssen die "Buildtools für Visual Studio 2019" von 
+https://visualstudio.microsoft.com/downloads/ heruntergeladen und installiert werden.
+Diese sind unter Tools für Visual Studio 2019 zu finden.
+Die heruntergeladene Datei installiert den Visual Studio Installer, welcher dann automatisch gestartet wird.
+Dabei erscheint ein Auswahldialog.
+Bei diesem Dialog müssen die C++-Buildtools ausgewählt werden. 
+An den Details zur Installation (rechts) nichts verändern.
+Mit Installieren bestätigen. (Dauert je nach Internetverbindung etwas da es sich hierbei um ca. 5 GB handelt.)
+Nach Abschluss der Installation den PC neustarten.
+
+
+Wieder die virtuelle Umgebung mit obigem Command starten.
+Installieren von Rasa im virtuellen Environment:
+pip install rasa 			(dauert lang)
+Testen ob Rasa erfolgreich installiert wurde mit Befehl: rasa
+
+Trainieren der Netze:
+Ausführen innerhalb des Ordners /Abgabe/Software/ArtBot/
+Befehl: rasa train			(dauert lang)
+
+
+Starten des Action-Servers:
+Ausführen innerhalb des Ordners /Abgabe/Software/ArtBot/
+Befehl: rasa run actions
+
+Starten der REST API von Rasa:
+Innerhalb eines neuen Terminals 
+Starten der virtuellen Umgebung mit obigem Command
+Ausführen innerhalb des Ordners /Abgabe/Software/ArtBot/
+Befehl für Konsolendebugging: rasa run -m models --enable-api --cors "*" --debug 
+Befehl ohne Konsolendebugging: rasa run -m models --enable-api --cors "*"
+
+Öffnen der ArtBot GUI:
+Ausführen/Öffnen der HTML-Datei (Doppelklick)
+Pfad: /Abgabe/Software/ArtBotGui/index.html

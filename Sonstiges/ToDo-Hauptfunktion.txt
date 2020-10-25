@@ -1,0 +1,15 @@
+﻿ToDo's für die Hauptfunktion des Chatbots
+
+Noch offen / nicht berücksichtigt:
+- Zurücksetzten des Künstler-Slots, damit nachdem man eine Abfrage mit Künstler und Bild gemacht hat, auch nur Bild von einem anderen
+Künstler abfragen kann -> nicht möglich wegen der Funktion mit nur Künstler und dann Art -> Extra Ausgabe eventuell, welche das erklärt
+- Bilder mit identischem Titel (momentan sind die Bildertitel einzigartig)
+- Künstler welche den exakt gleichen Namen haben
+- auch: Künstler Paul Rubens und Künstler Paul -> Paul kann nicht alleine ausgewählt werden
+
+Ergänzungen:
+- Fragen bezüglich der Bilder -> Welche Bilder von .. gibt es?
+- eventuell mehr Frage-Patterns
+- Anzeige des richtigen Künstlernamens eines ebenfalls gegebenen Bildes, falls der User den falschen Künstler genannt hat
+- bei exaktem Match: Anzeigen von Alternativen, die den Namen auch beinhalten
+- in artist_and_art_output.py: bei keinem gegebenen Bild kann der artist aus der Datenbank geholt werden, um die Darstellung zu verschönern

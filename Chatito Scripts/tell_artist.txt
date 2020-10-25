@@ -1,0 +1,44 @@
+//import ./common.chatito
+
+# Ways to request a restaurant within a location (using probability operator)
+# NOTE: 60% of the examples should come from the first sentence, and 40% from the second
+
+%[tell_artist]('training': '100', 'testing': '100')
+    *[100%] ~[me?] ~[help?] ~[img?] ~[praep?] @[artist] ~[look?]
+
+@[artist]
+    ~[Claude Monet]
+    ~[claude monet]
+    ~[Vincent van Gogh]
+    ~[vincent van gogh]
+    ~[Pablo Picasso]
+    ~[pablo picasso]
+    ~[Leonardo da Vinci]
+    ~[leonardo da vinci]
+
+~[img]
+    bilder
+    kunstwerke
+    bild
+    ein bild
+    werke
+    ein kunstwerk
+
+~[look]
+    sehen
+    anschauen
+    zeigen
+    betrachten
+    ansehen
+
+~[praep]
+    von
+
+~[me]
+    ich
+
+~[help]
+    würde
+    würde gerne
+    habe interesse
+    habe bock

@@ -1,0 +1,112 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <!-- Greeting -->
+    <topic name = "GREET">
+
+        <category>
+            <pattern>HALLO</pattern>
+            <template>
+                <random>
+                    <li> Hallo, kann ich dich für ein <set name = "topic">Kunstwerk</set> begeistern? </li>
+                    <li> Hi, wie wär es mit einem <set name = "topic">Kunstwerk</set> eines Malers? </li>
+                    <li> Grüß dich, hättest du Lust ein <set name = "topic">Kunstwerk</set> zu sehen?</li>
+                </random>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HI *</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HI</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>GRÜSS DICH</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>GRÜSS DICH *</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>SERVUS</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>SERVUS *</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HEY</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HEY *</pattern>
+            <template>
+                <srai>HALLO</srai>
+            </template>
+        </category>
+
+    </topic>
+
+
+    <topic name = "KUNSTWERK">
+
+        <category>
+            <pattern>JA</pattern>
+            <template>
+                <random>
+                    <li> Von welchem Künstler soll das Bild sein? </li>
+                </random>
+            </template>
+        </category>
+
+        <category>
+            <pattern>JA *</pattern>
+            <template>
+                <srai>JA</srai>
+            </template>
+        </category>
+
+        <category>
+        <pattern>VON *</pattern>
+            <template>
+                <srai>XCHECKART <star/></srai>
+                Ein Bild von <star/> ist: <get name="bild"/> aus der Epoche: <get name="epoche"/>.
+            </template>
+        </category>
+
+    </topic>
+
+    <category>
+        <pattern>*</pattern>
+            <template>
+                Ich verstehe dich leider nicht, versuch mich nach einem Kunstwerk zu fragen.
+            </template>
+    </category>
+
+</aiml>
